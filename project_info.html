@@ -429,12 +429,12 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-          公司主页
+          项目主页
         <!-- <small>Optional description</small> -->
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-        <li class="active">公司主页</li>
+        <li class="active">项目主页</li>
       </ol>
     </section>
 
@@ -443,68 +443,189 @@ desired effect
 
       <!-- Your Page Content Here -->
       <div class="row">
-          <div class="col-md-12">
-              <div class="box">
-                  <div class="box-header with-border">
-                      <h3 class="box-title">公司详情</h3>
-
-                      <!-- <div class="box&#45;tools pull&#45;right"> -->
-                      <!--     <button type="button" class="btn btn&#45;box&#45;tool" data&#45;widget="collapse"><i class="fa fa&#45;minus"></i> -->
-                      <!--     </button> -->
-                      <!--     <div class="btn&#45;group"> -->
-                      <!--         <button type="button" class="btn btn&#45;box&#45;tool dropdown&#45;toggle" data&#45;toggle="dropdown"> -->
-                      <!--             <i class="fa fa&#45;wrench"></i></button> -->
-                      <!--         <ul class="dropdown&#45;menu" role="menu"> -->
-                      <!--             <li><a href="#">Action</a></li> -->
-                      <!--             <li><a href="#">Another action</a></li> -->
-                      <!--             <li><a href="#">Something else here</a></li> -->
-                      <!--             <li class="divider"></li> -->
-                      <!--             <li><a href="#">Separated link</a></li> -->
-                      <!--         </ul> -->
-                      <!--     </div> -->
-                      <!--     <button type="button" class="btn btn&#45;box&#45;tool" data&#45;widget="remove"><i class="fa fa&#45;times"></i></button> -->
-                      <!-- </div> -->
-                  </div>
-                  <div class="box-body">
-                      <div class="row">
-                          <div class="col-md-7">
-                              <img src="dist/img/photo1.png" alt="Attachment Image" style="width:100%">
-                          </div>
-                          <div id="company-desc-div" class="col-md-5">
-                              <h4>公司名称</h4>
-                              <p>米趣玩科技</p>
-                              <h4>公司简介</h4>
-                              <p>米趣玩科技，是一家专注于互联网智能广告交易和游戏分发中心的优质游戏公司</p>
-                              <h4>相关负责人</h4>
-                              <p>天山童姥，乔峰，段誉，虚竹，扫地僧</p>
-                              <h4>投资额度</h4>
-                              <p>1亿</p>
-                              <h4>创建时间</h4>
-                              <p>2017/3/21</p>
-                              <h4>投资退出时间</h4>
-                              <p>2018/3/21</p>
-
-                          </div>
-                      </div>
-                      <!-- /.row -->
-                  </div>
-
-              </div>
-          </div>
-          <!-- /.col-md-12 -->
-      </div>
-      <!-- /.row -->
-      <div class="row">
           <div class="col-md-8">
-              <!-- PRODUCT LIST -->
-              <div class="box box-primary">
+
+              <!-- TABLE: LATEST ORDERS -->
+              <div class="box box-info">
                   <div class="box-header with-border">
-                      <h3 class="box-title">项目列表</h3>
+                      <h3 class="box-title">指标列表</h3>
+
+                      <div class="box-tools pull-right">
+                          <!-- <button type="button" class="btn btn&#45;box&#45;tool" data&#45;widget="collapse"><i class="fa fa&#45;minus"></i> -->
+                          <!-- </button> -->
+                          <!-- <button type="button" class="btn btn&#45;box&#45;tool" data&#45;widget="remove"><i class="fa fa&#45;times"></i></button> -->
+                        <ul class="pagination pagination-sm inline">
+                          <li><a href="#">&laquo;</a></li>
+                          <!-- <li><a href="#">1</a></li> -->
+                          <!-- <li><a href="#">2</a></li> -->
+                          <!-- <li><a href="#">3</a></li> -->
+                          <li><a href="#">&raquo;</a></li>
+                        </ul>
+
+                      </div>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                      <div class="table-responsive">
+                          <table class="table no-margin">
+                              <thead>
+                                  <tr>
+                                      <th>指标名称</th>
+                                      <th>所属版块</th>
+                                      <th>统计方式</th>
+                                      <th>当前状态</th>
+                                      <th>操作</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td><a href="pages/examples/invoice.html">日活</a></td>
+                                      <td>经营规划</td>
+                                      <td>
+                                          累计求和
+                                      </td>
+                                      <td><span class="label label-success">正常</span></td>
+                                      <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
+                                  </tr>
+                                  <tr>
+                                      <td><a href="pages/examples/invoice.html">日活</a></td>
+                                      <td>经营规划</td>
+                                      <td>
+                                          累计求和
+                                      </td>
+                                      <td><span class="label label-success">正常</span></td>
+                                      <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
+                                  </tr>
+                                  <tr>
+                                      <td><a href="pages/examples/invoice.html">日活</a></td>
+                                      <td>经营规划</td>
+                                      <td>
+                                          累计求和
+                                      </td>
+                                      <td><span class="label label-warning">缺数据</span></td>
+                                      <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
+                                  </tr>
+                                  <tr>
+                                      <td><a href="pages/examples/invoice.html">日活</a></td>
+                                      <td>经营规划</td>
+                                      <td>
+                                          累计求和
+                                      </td>
+                                      <td><span class="label label-danger">异常</span></td>
+                                      <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
+                                  </tr>
+                                  <tr>
+                                      <td><a href="pages/examples/invoice.html">日活</a></td>
+                                      <td>经营规划</td>
+                                      <td>
+                                          累计求和
+                                      </td>
+                                      <td><span class="label label-success">正常</span></td>
+                                      <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
+                                  </tr>
+                                  <tr>
+                                      <td><a href="pages/examples/invoice.html">日活</a></td>
+                                      <td>经营规划</td>
+                                      <td>
+                                          累计求和
+                                      </td>
+                                      <td><span class="label label-success">正常</span></td>
+                                      <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
+                                  </tr>
+                                  <tr>
+                                      <td><a href="pages/examples/invoice.html">日活</a></td>
+                                      <td>经营规划</td>
+                                      <td>
+                                          累计求和
+                                      </td>
+                                      <td><span class="label label-danger">异常</span></td>
+                                      <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                      <!-- /.table-responsive -->
+                  </div>
+                  <!-- /.box-body -->
+                  <div class="box-footer clearfix">
+                    <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i>添加指标</button>
+                  </div>
+                  <!-- /.box-footer -->
+              </div>
+              <!-- /.box -->
+
+
+          </div>
+      <!--     <div class="col&#45;md&#45;4"> -->
+      <!--     </div> -->
+      <!-- </div> -->
+      <!-- <!&#45;&#45; /.row &#45;&#45;> -->
+      <!-- <div class="row"> -->
+      <div class="col-md-4">
+          <div class="box box-default">
+                  <div class="box-header with-border">
+                      <h3 class="box-title">项目简介</h3>
 
                       <div class="box-tools pull-right">
                           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                           </button>
                           <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <div class="info-box" style="box-shadow:0 0px 0px;margin-bottom:0px;">
+                      <!-- Apply any bg-* class to to the icon to color it -->
+                      <span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
+                      <div class="info-box-content">
+                        <h5>项目名称</h5>
+                        <span class="info-box-text">项目描述描述描述</span>
+                      </div><!-- /.info-box-content -->
+                    </div><!-- /.info-box -->
+                      
+
+                  </div>
+                  <!-- /.box-body -->
+                  <div class="box-footer no-padding">
+                      <ul class="nav nav-pills nav-stacked">
+                          <li style="display:block;padding:10px 15px;">
+                              <h4>项目创建时间</h4>
+                              <p>2017/3/20</p>
+                          </li>
+                          <li style="display:block;padding:10px 15px;">
+                              <h4>项目结束时间</h4>
+                              <p>2018/3/20</p>
+                          </li>
+                          <li style="display:block;padding:10px 15px;">
+                              <button class="btn btn-primary pull-right" style="margin-bottom:10px;">项目启动</button>
+                          </li>
+                      </ul>
+                  </div>
+                  <!-- /.footer -->
+              </div>
+              <!-- /.box -->
+
+
+          </div>
+          <div class="col-md-8">
+              <!-- PRODUCT LIST -->
+              <div class="box box-primary">
+                  <div class="box-header with-border">
+                      <h3 class="box-title">子项目列表</h3>
+
+                      <div class="box-tools pull-right">
+                          <!-- <button type="button" class="btn btn&#45;box&#45;tool" data&#45;widget="collapse"><i class="fa fa&#45;minus"></i> -->
+                          <!-- </button> -->
+                          <!-- <button type="button" class="btn btn&#45;box&#45;tool" data&#45;widget="remove"><i class="fa fa&#45;times"></i></button> -->
+                        <ul class="pagination pagination-sm inline">
+                          <li><a href="#">&laquo;</a></li>
+                          <!-- <li><a href="#">1</a></li> -->
+                          <!-- <li><a href="#">2</a></li> -->
+                          <!-- <li><a href="#">3</a></li> -->
+                          <li><a href="#">&raquo;</a></li>
+                        </ul>
+
+
                       </div>
                   </div>
                   <!-- /.box-header -->
@@ -578,7 +699,8 @@ desired effect
                   </div>
                   <!-- /.box-body -->
                   <div class="box-footer text-center">
-                      <a href="javascript:void(0)" class="uppercase"></a>
+                    <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i>添加子项目</button>
+
                   </div>
                   <!-- /.box-footer -->
               </div>
