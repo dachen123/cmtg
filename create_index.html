@@ -114,6 +114,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
     width: 0;
 	margin-left:5px;
 }
+        .prop-dropdown{
+            margin-bottom:15px; 
+        }
+
+        .table-add-item:after{
+            content: "020"; 
+            display: block; 
+            height: 0; 
+            clear: both; 
+            visibility: hidden; 
+        }
+        .table-add-item{
+            padding:10px 0; 
+            border: 1px solid #d2d6de;
+            display:none;
+        }
 
 </style>
 </head>
@@ -597,13 +613,26 @@ desired effect
                   <div class="table-responsive" style="padding:15px;">
                       <div class="table-header">
                             <h4>规则列表</h4>
-                            <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i>添加规则</button>
+                            <button id="add-item-btn" type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i>添加规则</button>
 
                       </div>
                       <div class="table-add-item">
-                          <div id="get-statis-method" class="dropdown col-md-6" style="position:relative">
+                          <div class="form-group col-md-6">
+                              <label for="inputIndexSrc" class="col-sm-2 control-label">统计方式</label>
+
+                              <div class="col-sm-10 no-padding">
+                                  <select class="form-control" id="inputIndexSrc">
+                                      <option>累积值</option>
+                                      <option>当前值</option>
+                                      <option>算术平均</option>
+                                      <option>变化率</option>
+                                  </select>
+                              </div>
+                          </div>
+
+                          <div id="get-statis-method" class="dropdown col-md-6 prop-dropdown" style="position:relative">
                               <div class="form-group">
-                                  <label for="inputStatis" class="col-sm-2 control-label">统计方式</label>
+                                  <label for="inputStatis" class="col-sm-2 control-label">比对目标</label>
 
                                   <div class="col-sm-10 input-group">
                                       <input id="statis-input-value" type="text" class="form-control" id="inputStatis">
@@ -633,6 +662,44 @@ desired effect
                                   </div>
                               </div>
                           </div>
+
+                          <div id="get-contrast-method" class="dropdown col-md-6 prop-dropdown" style="position:relative">
+                              <div class="form-group">
+                                  <label for="inputStatis" class="col-sm-2 control-label">比对方式</label>
+
+                                  <div class="col-sm-10 input-group">
+                                      <input id="contrast-method-value" type="text" class="form-control" id="inputStatis">
+                                      <a href="#" class="btn dropdown-toggle input-group-addon" data-toggle="dropdown">Click Here <span class="caret"></span></a>
+
+                                      <ul class="dropdown-menu">
+                                          <li>
+                                              <a data-value="absolute_value" href="####">绝对值大小</a>
+                                          </li>
+                                          <li><a data-value="boolean_value" href="#">真假</a></li>
+                                          <li>
+                                              <a data-value="self_value" class="trigger right-caret">相关性</a>
+                                              <ul class="dropdown-menu sub-menu">
+                                                  <li>
+                                                      <a data-value="huanbi" href="####">两个指标趋势的相关系数</a>
+                                                  </li>
+                                              </ul>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label for="warnThreshold" class="col-sm-2 control-label">报警阈值</label>
+
+                              <div class="col-sm-10 no-padding">
+                                  <input type="text" class="form-control" id="warnThreshold">
+                              </div>
+                          </div>
+                          <div class="col-md-12">
+                              <button class="btn btn-primary">保存</button>
+                              <button class="btn btn-default">取消</button>
+                          </div>
+
                       </div>
                       <table class="table">
                           <thead>
@@ -699,6 +766,12 @@ desired effect
 
               </div>
               <!-- /.row -->
+              <div class="box-footer">
+                  <button type="button" class="btn btn-default pull-right"></i>保存修改</button>
+              </div>
+              <!-- <div class="overlay"> -->
+              <!--     <i class="fa fa&#45;refresh fa&#45;spin"></i> -->
+              <!-- </div> -->
           </div>
           <!-- /.box-body -->
 
@@ -880,8 +953,8 @@ $('body').on('click','.level-up',function(){
 });
 </script>
 <script>
-$(function(){
-	$(".dropdown-menu > li > a.trigger").on("click",function(e){
+function cascader(cascader_div, output){
+    $(cascader_div+"  .dropdown-menu > li > a.trigger").on("click",function(e){
 		var current=$(this).next();
 		var grandparent=$(this).parent().parent();
 		if($(this).hasClass('left-caret')||$(this).hasClass('right-caret'))
@@ -895,10 +968,11 @@ $(function(){
             path.push($(this).find('a').html());
         });
         path = path.reverse();
-        $('#statis-input-value').val(path.join('/'));
+        $(output).val(path.join('/'));
 		e.stopPropagation();
+        return false;
 	});
-	$(".dropdown-menu > li > a:not(.trigger)").on("click",function(e){
+    $(cascader_div+"  .dropdown-menu > li > a:not(.trigger)").on("click",function(e){
 		var root=$(this).closest('.dropdown');
 		root.find('.left-caret').toggleClass('right-caret left-caret');
 		root.find('.sub-menu:visible').hide();
@@ -909,9 +983,20 @@ $(function(){
             path.push($(this).find('a').html());
         });
         path = path.reverse();
-        $('#statis-input-value').val(path.join('/'));
+        $(output).val(path.join('/'));
 		e.stopPropagation();
+        return false;
 	});
+}
+$(function(){
+    cascader('#get-statis-method','#statis-input-value');
+    cascader('#get-contrast-method','#contrast-method-value');
+});
+</script>
+<script>
+
+$('#add-item-btn').on('click',function(){
+    $('.table-add-item').toggle('fast');
 });
 </script>
 </body>
