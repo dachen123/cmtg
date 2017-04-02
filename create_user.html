@@ -23,7 +23,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         apply the skin class to the body tag so the changes take effect.
   -->
   <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
-  <link rel="stylesheet" href="plugins/datetimepicker/bootstrap-datetimepicker.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,79 +56,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     word-wrap: break-word;
     width: 150px;
 }
-        #lately-pm-list>.info-box{
-            margin-bottom:2px; 
-        }
-.table-header{
-    padding:10px;
-}
-
-.table-header h4{
-    display:inline-block;
-}
-        .table-header:after{
-            clear:both; 
-        }
-.dropdown-menu>li
-{	position:relative;
-	-webkit-user-select: none; /* Chrome/Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+ */
-	/* Rules below not implemented in browsers yet */
-	-o-user-select: none;
-	user-select: none;
-	cursor:pointer;
-}
-.dropdown-menu .sub-menu {
-    left: 100%;
-    position: absolute;
-    top: 0;
-    display:none;
-    margin-top: -1px;
-	border-top-left-radius:0;
-	border-bottom-left-radius:0;
-	border-left-color:#fff;
-	box-shadow:none;
-}
-.right-caret:after
- {	content:"";
-    border-bottom: 4px solid transparent;
-    border-top: 4px solid transparent;
-    border-left: 4px solid orange;
-    display: inline-block;
-    height: 0;
-    opacity: 0.8;
-    vertical-align: middle;
-    width: 0;
-	margin-left:5px;
-}
-.left-caret:after
-{	content:"";
-    border-bottom: 4px solid transparent;
-    border-top: 4px solid transparent;
-    border-right: 4px solid orange;
-    display: inline-block;
-    height: 0;
-    opacity: 0.8;
-    vertical-align: middle;
-    width: 0;
-	margin-left:5px;
-}
-        .prop-dropdown{
-            margin-bottom:11px; 
-        }
-
-        .table-add-item:after{
-            content: "020"; 
-            display: block; 
-            height: 0; 
-            clear: both; 
-            visibility: hidden; 
-        }
-        .table-add-item{
-            padding:10px 0; 
-            border: 1px solid #d2d6de;
-            display:none;
+        .table>tbody>tr>td{
+            vertical-align:middle; 
         }
 
 </style>
@@ -527,12 +455,12 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-          用户主页
+          用户管理
         <!-- <small>Optional description</small> -->
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-        <li class="active">用户主页</li>
+        <li class="active">用户管理</li>
       </ol>
     </section>
 
@@ -540,256 +468,74 @@ desired effect
     <section class="content">
 
       <!-- Your Page Content Here -->
-      <!-- <div class="row"> -->
-      <!--     <div class="col&#45;md&#45;12"> -->
-      <!--     </div> -->
-      <!-- </div> -->
-      <div id="create_index_box" class="box box-success">
+      <div class="box box-success">
           <div class="box-header with-border">
-              <h3 class="box-title">创建指标</h3>
-
-              <!-- <div class="box&#45;tools pull&#45;right"> -->
-              <!--     <button type="button" class="btn btn&#45;box&#45;tool" data&#45;widget="collapse"><i class="fa fa&#45;minus"></i> -->
-              <!--     </button> -->
-              <!--     <button type="button" class="btn btn&#45;box&#45;tool" data&#45;widget="remove"><i class="fa fa&#45;times"></i></button> -->
-              <!-- </div> -->
+              <h3 class="box-title">用户列表</h3>
           </div>
-          <!-- /.box-header -->
           <div class="box-body">
-              <div class="row">
-                  <div class="col-md-6 form-horizontal">
-                    <div class="form-group">
-                      <label for="inputIndexName" class="col-sm-2 control-label">指标名称</label>
-
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputIndexName">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="inputIndexAttr" class="col-sm-2 control-label">属性</label>
-
-                      <div class="col-sm-10">
-                        <select class="form-control" id="inputIndexAttr">
-                            <option>字符串</option>
-                            <option>整数</option>
-                            <option>实数</option>
-                        </select>
-                      </div>
-                    </div>
-
-                  </div>
-                  <!-- /.col-md-6 -->
-                  <div class="col-md-6 form-horizontal">
-                    <div class="form-group">
-                      <label for="inputIndexSrc" class="col-sm-2 control-label">来源</label>
-
-                      <div class="col-sm-10">
-                        <select class="form-control" id="inputIndexSrc">
-                            <option>人工录入</option>
-                            <option>Excel读入</option>
-                            <option>接口读入</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="inputIndexSrc" class="col-sm-2 control-label">所属版块</label>
-
-                      <div class="col-sm-10">
-                        <select class="form-control" id="inputIndexSrc">
-                            <option>业务远景</option>
-                            <option>经营收入</option>
-                            <option>资金使用</option>
-                            <option>对赌情况</option>
-                            <option>银行流水</option>
-                            <option>其他</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /.col-md-6 -->
+              <div class="table-responsive">
+                  <table class="table">
+                      <thead>
+                          <tr>
+                              <th>用户名</th>
+                              <th>头像</th>
+                              <th>职级</th>
+                              <th>手机号</th>
+                              <th>邮箱</th>
+                              <th>订阅级别</th>
+                              <th>所属公司</th>
+                              <th>操作</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>小明</td>
+                              <td><img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" style="max-width:45px;"></td>
+                              <td>管理员</td>
+                              <td>1381113xxxx</td>
+                              <td>xxxx@gmail.com</td>
+                              <td>普通</td>
+                              <td>公司1</td>
+                              <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
+                          </tr>
+                          <tr>
+                              <td>小明</td>
+                              <td><img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" style="max-width:45px;"></td>
+                              <td>管理员</td>
+                              <td>1381113xxxx</td>
+                              <td>xxxx@gmail.com</td>
+                              <td>普通</td>
+                              <td>公司1</td>
+                              <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
+                          </tr>
+                          <tr>
+                              <td>小明</td>
+                              <td><img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" style="max-width:45px;"></td>
+                              <td>管理员</td>
+                              <td>1381113xxxx</td>
+                              <td>xxxx@gmail.com</td>
+                              <td>普通</td>
+                              <td>公司1</td>
+                              <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
+                          </tr>
+                          <tr>
+                              <td>小明</td>
+                              <td><img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" style="max-width:45px;"></td>
+                              <td>管理员</td>
+                              <td>1381113xxxx</td>
+                              <td>xxxx@gmail.com</td>
+                              <td>普通</td>
+                              <td>公司1</td>
+                              <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
+                          </tr>
+                      </tbody>
+                  </table>
               </div>
-              <!-- /.row -->
-              <div class="row">
-
-                  <div class="table-responsive" style="padding:15px;">
-                      <div class="table-header">
-                            <h4>规则列表</h4>
-                            <button id="add-item-btn" type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i>添加规则</button>
-
-                      </div>
-                      <div class="table-add-item">
-                          <div class="form-group col-md-6">
-                              <label for="inputIndexSrc" class="col-sm-2 control-label">统计方式</label>
-
-                              <div class="col-sm-10 no-padding">
-                                  <select class="form-control" id="inputIndexSrc">
-                                      <option>累积值</option>
-                                      <option>当前值</option>
-                                      <option>算术平均</option>
-                                      <option>变化率</option>
-                                  </select>
-                              </div>
-                          </div>
-
-                          <div id="get-statis-method" class="dropdown col-md-6 prop-dropdown" style="position:relative">
-                              <div class="form-group">
-                                  <label for="inputStatis" class="col-sm-2 control-label">比对目标</label>
-
-                                  <div class="col-sm-10 input-group">
-                                      <input id="statis-input-value" type="text" class="form-control" id="inputStatis">
-                                      <a href="#" class="btn dropdown-toggle input-group-addon" data-toggle="dropdown">Click Here <span class="caret"></span></a>
-
-                                      <ul class="dropdown-menu">
-                                          <li>
-                                              <a data-value="expect_value" class="trigger right-caret">和预期值比</a>
-                                              <ul class="dropdown-menu sub-menu">
-                                                  <li><a data-value="manaul_input" href="####">手工录入</a></li>
-                                                  <li>
-                                                      <a data-value="excel_input" href="####">Excel读取</a>
-                                                  </li>
-                                              </ul>
-                                          </li>
-                                          <li>
-                                              <a data-value="self_value" class="trigger right-caret">和本指标自己比</a>
-                                              <ul class="dropdown-menu sub-menu">
-                                                  <li><a data-value="tongbi" href="####">同比</a></li>
-                                                  <li>
-                                                      <a data-value="huanbi" href="####">环比</a>
-                                                  </li>
-                                              </ul>
-                                          </li>
-                                          <li><a data-value="other_index" href="#">和其他指标比</a></li>
-                                      </ul>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div id="get-contrast-method" class="dropdown col-md-6 prop-dropdown" style="position:relative">
-                              <div class="form-group">
-                                  <label for="inputStatis" class="col-sm-2 control-label">比对方式</label>
-
-                                  <div class="col-sm-10 input-group">
-                                      <input id="contrast-method-value" type="text" class="form-control" id="inputStatis">
-                                      <a href="#" class="btn dropdown-toggle input-group-addon" data-toggle="dropdown">Click Here <span class="caret"></span></a>
-
-                                      <ul class="dropdown-menu">
-                                          <li>
-                                              <a data-value="absolute_value" href="####">绝对值大小</a>
-                                          </li>
-                                          <li><a data-value="boolean_value" href="#">真假</a></li>
-                                          <li>
-                                              <a data-value="self_value" class="trigger right-caret">相关性</a>
-                                              <ul class="dropdown-menu sub-menu">
-                                                  <li>
-                                                      <a data-value="huanbi" href="####">两个指标趋势的相关系数</a>
-                                                  </li>
-                                              </ul>
-                                          </li>
-                                      </ul>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="form-group col-md-6">
-                              <label for="warnThreshold" class="col-sm-2 control-label">报警阈值</label>
-
-                              <div class="col-sm-10 no-padding">
-                                  <input type="text" class="form-control" id="warnThreshold">
-                              </div>
-                          </div>
-                          <div class="form-group col-md-6">
-                              <label class="col-sm-2 control-label">比对时间：</label>
-
-                              <div class='input-group date col-sm-10' id='rule-datetimepicker'>
-                                  <input type='text' class="form-control" />
-                                  <span class="input-group-addon">
-                                      <span class="glyphicon glyphicon-calendar"></span>
-                                  </span>
-                              </div>
-                              <!-- /.input group -->
-                          </div>
-                          <div class="col-md-12">
-                              <button class="btn btn-primary">保存</button>
-                              <button class="btn btn-default">取消</button>
-                          </div>
-
-                      </div>
-                      <table class="table">
-                          <thead>
-                              <tr>
-                                  <th>统计方式</th>
-                                  <th>比对目标</th>
-                                  <th>比对方式</th>
-                                  <th>报警阈值</th>
-                                  <th>操作</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                  <td><a href="pages/examples/invoice.html">累积值</a></td>
-                                  <td>预期值比/手工录入</td>
-                                  <td>
-                                      绝对值大小
-                                  </td>
-                                  <td>100万</td>
-                                  <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
-                              </tr>
-                              <tr>
-                                  <td><a href="pages/examples/invoice.html">当前值</a></td>
-                                  <td>预期值比/Excel读取</td>
-                                  <td>
-                                     真假 
-                                  </td>
-                                  <td>无</td>
-                                  <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
-                              </tr>
-                              <tr>
-                                  <td><a href="pages/examples/invoice.html">算术平均</a></td>
-                                  <td>和本指标自己比/环比</td>
-                                  <td>
-                                      绝对值大小
-                                  </td>
-                                  <td>100万</td>
-                                  <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
-                              </tr>
-                              <tr>
-                                  <td><a href="pages/examples/invoice.html">变化率</a></td>
-                                  <td>和本指标自己比/同比</td>
-                                  <td>
-                                      绝对值大小
-                                  </td>
-                                  <td>100万</td>
-                                  <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
-                              </tr>
-                              <tr>
-                                  <td><a href="pages/examples/invoice.html">变化率</a></td>
-                                  <td>和其他指标比/xxx</td>
-                                  <td>
-                                      相关性/求相关系数
-                                  </td>
-                                  <td>100</td>
-                                  <td><button class="btn btn-xs btn-primary" style="margin-right:5px;">编辑</button><button class="btn btn-xs btn-danger" >删除</button></td>
-                              </tr>
-                          </tbody>
-                      </table>
-                  </div>
-                  <!-- /.table-responsive -->
-              </div>
-
-
-              </div>
-              <!-- /.row -->
-              <div class="box-footer">
-                  <button type="button" class="btn btn-default pull-right"></i>保存修改</button>
-              </div>
-              <!-- <div class="overlay"> -->
-              <!--     <i class="fa fa&#45;refresh fa&#45;spin"></i> -->
-              <!-- </div> -->
           </div>
-          <!-- /.box-body -->
-
-
+          <div class="box-footer">
+              <button id="popup-add-member-modal" type="button" class="btn btn-default pull-right" data-dismiss="modal"><i class="fa fa-plus"></i>添加成员</button>
+          </div>
       </div>
-      <!-- /.row -->
 
 
     </section>
@@ -884,6 +630,73 @@ desired effect
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<div id="add-new-user" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Default Modal</h4>
+            </div>
+            <div class="modal-body form-horizontal">
+
+                <div class="form-group">
+                    <label for="member_name" class="col-sm-2 control-label">成员名称</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="member_name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="member_rank" class="col-sm-2 control-label">成员职级</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="member_rank">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="member_phone" class="col-sm-2 control-label">手机号</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="member_phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="member_email" class="col-sm-2 control-label">邮箱</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="member_email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subscribe_level" class="col-sm-2 control-label">订阅级别</label>
+
+                    <div class="col-sm-10">
+                        <select class="form-control" id="member_phone">
+                            <option>普通</option>
+                            <option>紧急</option>
+                            <option>通知</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="belong_company" class="col-sm-2 control-label">所属公司</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="belong_company">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">保存</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 
 <!-- REQUIRED JS SCRIPTS -->
 
@@ -891,10 +704,7 @@ desired effect
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<!-- <script src="plugins/chartjs/Chart.min.js"></script> -->
-<script src="plugins/moment/moment.min.js"></script>
-<script src="plugins/moment/locale/zh-cn.js"></script>
-<script src="plugins/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script src="plugins/chartjs/Chart.min.js"></script>
 <script src="plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
@@ -1014,22 +824,10 @@ $('#add-item-btn').on('click',function(){
     $('.table-add-item').toggle('fast');
 });
 </script>
-<script type="text/javascript">
-$(function () {
-    var default_time = moment().local().hours(3).minutes(0).seconds(0);
-    $('#rule-datetimepicker').datetimepicker({
-        locale: 'zh-cn',
-        widgetPositioning:{
-            horizontal: 'auto',
-            vertical: 'bottom'
-        },
-        defaultDate:default_time
+<script>
+    $('#popup-add-member-modal').on('click',function(){
+        $('#add-new-user').modal('show');
     });
-    $('#rule-datetimepicker').on('dp.change',function(e){
-        console.log(e); 
-        console.log($('#rule-datetimepicker').data('DateTimePicker').date());
-    });
-});
 </script>
 </body>
 </html>
