@@ -23,6 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         apply the skin class to the body tag so the changes take effect.
   -->
   <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap-multiselect/bootstrap-multiselect.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,7 +35,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 #company-desc-div>p{
     margin-bottom:15px;
 }
+        .user-panel{
+            cursor:pointer; 
+        }
+.clear-float:after{
+  content: "020"; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;  
+  }
 </style>
+
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -306,7 +318,7 @@ desired effect
             <li id="p2" ><a href="starter.html">项目2</a></li>
             <li id="p3" ><a href="starter.html">项目3</a></li>
             <li id="p4" >
-                <a href="#"><span class="a-span">项目4eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</span>
+                <a href="#"><span class="a-span">项目4</span>
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
@@ -518,7 +530,7 @@ desired effect
                                   <a href="javascript:void(0)" class="product-title">项目1
                                       <!-- <span class="label label&#45;warning pull&#45;right">$1800</span> -->
                                       <button class="btn btn-xs btn-danger pull-right">删除</button>
-                                      <button class="btn btn-xs btn-primary pull-right" style="margin-right:10px;">编辑</button>
+                                      <button class="btn btn-xs btn-primary pull-right update-project-btn" style="margin-right:10px;">编辑</button>
                                   </a>
                                   <span class="product-description">
                                       这个项目很好很好很好很好很好很好很好很好很好
@@ -534,7 +546,7 @@ desired effect
                                   <a href="javascript:void(0)" class="product-title">项目2
                                       <!-- <span class="label label&#45;info pull&#45;right">$700</span> -->
                                       <button class="btn btn-xs btn-danger pull-right">删除</button>
-                                      <button class="btn btn-xs btn-primary pull-right" style="margin-right:10px;">编辑</button>
+                                      <button class="btn btn-xs btn-primary pull-right update-project-btn" style="margin-right:10px;">编辑</button>
                                   </a>
                                   <span class="product-description">
                                       这个项目很好很好很好很好很好很好很好很好很好
@@ -550,7 +562,7 @@ desired effect
                                   <a href="javascript:void(0)" class="product-title">项目3
                                       <!-- <span class="label label&#45;danger pull&#45;right">$350</span> -->
                                       <button class="btn btn-xs btn-danger pull-right">删除</button>
-                                      <button class="btn btn-xs btn-primary pull-right" style="margin-right:10px;">编辑</button>
+                                      <button class="btn btn-xs btn-primary pull-right update-project-btn" style="margin-right:10px;">编辑</button>
                                   </a>
                                   <span class="product-description">
                                       这个项目很好很好很好很好很好很好很好很好很好
@@ -566,7 +578,7 @@ desired effect
                                   <a href="javascript:void(0)" class="product-title">项目4
                                       <!-- <span class="label label&#45;success pull&#45;right">$399</span> -->
                                       <button class="btn btn-xs btn-danger pull-right">删除</button>
-                                      <button class="btn btn-xs btn-primary pull-right" style="margin-right:10px;">编辑</button>
+                                      <button class="btn btn-xs btn-primary pull-right update-project-btn" style="margin-right:10px;">编辑</button>
                                   </a>
                                   <span class="product-description">
                                       这个项目很好很好很好很好很好很好很好很好很好
@@ -578,8 +590,10 @@ desired effect
                   </div>
                   <!-- /.box-body -->
                   <div class="box-footer text-center">
-                      <a href="javascript:void(0)" class="uppercase"></a>
+                    <button type="button" class="btn btn-default pull-right add-project-btn"><i class="fa fa-plus"></i>添加项目</button>
+
                   </div>
+
                   <!-- /.box-footer -->
               </div>
               <!-- /.box -->
@@ -681,6 +695,151 @@ desired effect
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<!-- <div id="edit&#45;project&#45;modal" class="modal"> -->
+<!--     <div class="modal&#45;dialog"> -->
+<!--         <div class="modal&#45;content"> -->
+<!--             <div class="modal&#45;header"> -->
+<!--                 <button type="button" class="close" data&#45;dismiss="modal" aria&#45;label="Close"> -->
+<!--                     <span aria&#45;hidden="true">&#38;times;</span></button> -->
+<!--                 <h4 class="modal&#45;title">Default Modal</h4> -->
+<!--             </div> -->
+<!--             <div class="modal&#45;body form&#45;horizontal"> -->
+<!--  -->
+<!--                 <div class="form&#45;group"> -->
+<!--                     <label for="project_name" class="col&#45;sm&#45;2 control&#45;label">项目名称</label> -->
+<!--  -->
+<!--                     <div class="col&#45;sm&#45;10"> -->
+<!--                         <input type="text" class="form&#45;control" id="project_name"> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--                 <div class="form&#45;group"> -->
+<!--                     <label for="project_image" class="col&#45;sm&#45;2 control&#45;label">项目图片</label> -->
+<!--  -->
+<!--                     <div class="col&#45;sm&#45;10"> -->
+<!--                         <input type="text" class="form&#45;control" id="member_image"> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--                 <div class="form&#45;group"> -->
+<!--                     <label for="project_desc" class="col&#45;sm&#45;2 control&#45;label">项目简介</label> -->
+<!--  -->
+<!--                     <div class="col&#45;sm&#45;10"> -->
+<!--                         <input type="text" class="form&#45;control" id="project_desc"> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--                 <div class="form&#45;group"> -->
+<!--                     <label for="project_create_time" class="col&#45;sm&#45;2 control&#45;label">项目创建时间</label> -->
+<!--  -->
+<!--                     <div class="col&#45;sm&#45;10"> -->
+<!--                         <input type="text" class="form&#45;control" id="project_create_time"> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--                 <div class="form&#45;group"> -->
+<!--                     <label for="project_end_time" class="col&#45;sm&#45;2 control&#45;label">项目结束时间</label> -->
+<!--  -->
+<!--                     <div class="col&#45;sm&#45;10"> -->
+<!--                         <input type="text" class="form&#45;control" id="project_end_time"> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--  -->
+<!--             </div> -->
+<!--             <div class="modal&#45;footer"> -->
+<!--                 <button type="button" class="btn btn&#45;default pull&#45;right" data&#45;dismiss="modal">保存</button> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--         <!&#45;&#45; /.modal&#45;content &#45;&#45;> -->
+<!--     </div> -->
+<!--     <!&#45;&#45; /.modal&#45;dialog &#45;&#45;> -->
+<!-- </div> -->
+<!-- /.modal -->
+<div id="edit-project-modal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Default Modal</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="project_name" class="control-label">项目名称</label>
+
+                    <input type="text" class="form-control" id="project_name">
+                </div>
+                <div class="form-group">
+                    <label for="project_image" class="control-label">项目图片</label>
+
+                    <input type="text" class="form-control" id="member_image">
+                </div>
+                <div class="form-group">
+                    <label for="project_desc" class="control-label">项目简介</label>
+
+                    <input type="text" class="form-control" id="project_desc">
+                </div>
+                <div class="form-group">
+                    <label for="project_create_time" class="control-label">项目创建时间</label>
+
+                    <input type="text" class="form-control" id="project_create_time">
+                </div>
+                <div class="form-group">
+                    <label for="project_end_time" class="control-label">项目结束时间</label>
+
+                    <input type="text" class="form-control" id="project_end_time">
+                </div>
+                <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox">从父项目继承指标 
+                            </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <select id="inherit-index-select" class="form-control" name="multiselect[]" multiple="multiple">
+                        <option value="1">指标 1</option>
+                        <option value="2">指标 2</option>
+                        <option value="3">指标 3</option>
+                        <option value="4">指标 4</option>
+                        <option value="5">指标 5</option>
+                        <option value="6">指标 6</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox">从同级项目继承指标 
+                            </label>
+                    </div>
+                </div>
+                <div class="form-group clear-float">
+                    <div class="col-xs-6 clear-float no-padding">
+                        <select id="clone-project-select" class="form-control">
+                            <option value="1"> 项目 1</option>
+                            <option value="2"> 项目 2</option>
+                            <option value="3"> 项目 3</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-6 clear-float no-padding">
+                        <select id="clone-index-select" class="form-control" name="multiselect[]" multiple="multiple">
+                            <option value="1">指标 1</option>
+                            <option value="2">指标 2</option>
+                            <option value="3">指标 3</option>
+                            <option value="4">指标 4</option>
+                            <option value="5">指标 5</option>
+                            <option value="6">指标 6</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">保存</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 
 <!-- REQUIRED JS SCRIPTS -->
 
@@ -692,6 +851,27 @@ desired effect
 <script src="plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
+<script src="plugins/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#inherit-index-select').multiselect({
+        includeSelectAllOption: true,
+        enableFiltering: true,
+        buttonWidth: '100%',
+        nonSelectedText: '请选择指标',
+        numberDisplayed: 10
+
+    });
+    $('#clone-index-select').multiselect({
+        includeSelectAllOption: true,
+        enableFiltering: true,
+        buttonWidth: '100%',
+        nonSelectedText: '请选择指标',
+        numberDisplayed: 10
+
+    });
+});
+</script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
@@ -709,7 +889,7 @@ $('body').on('click','.treeview, .treeview-menu>li',function(){
         var ul_list = $(this).parents('.treeview-menu, .sidebar-menu');
         console.log(ul_list.length);
         //复制导航栏代码
-        if( ul_list.length == 3){
+        if( ul_list.length == 6){
             $(event.target).closest('li').addClass('active');
             $(event.target).closest('li').find('ul:first').addClass('menu-open');
             $(event.target).closest('li').find('ul:first').css('display','block');
@@ -727,7 +907,7 @@ $('body').on('click','.level-up',function(){
     var first_node_id = $('ul.sidebar-menu').children('li:first').attr('id');
     $('ul.sidebar-menu').html(sidebar);
     var li = $('#'+first_node_id);
-    for (var i=0;i<2;i++){
+    for (var i=0;i<5;i++){
         li.parents('li:first').addClass('active');
         li.parents('li:first').find('ul:first').addClass('menu-open');
         li.parents('li:first').find('ul:first').css('display','block');
@@ -739,6 +919,16 @@ $('body').on('click','.level-up',function(){
     $('ul.sidebar-menu').append('<li><button class="level-up">向上</button></li>');
 
 
+});
+</script>
+<script>
+    $('body').on('click','.update-project-btn',function(){
+        $('#edit-project-modal').modal('show');
+    });
+</script>
+<script>
+$('body').on('click','.user-panel',function(){
+    window.location.href = 'homepage.html';
 });
 </script>
 </body>

@@ -131,6 +131,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             border: 1px solid #d2d6de;
             display:none;
         }
+        .user-panel{
+            cursor:pointer; 
+        }
 
 </style>
 </head>
@@ -404,7 +407,7 @@ desired effect
             <li id="p2" ><a href="starter.html">项目2</a></li>
             <li id="p3" ><a href="starter.html">项目3</a></li>
             <li id="p4" >
-                <a href="#"><span class="a-span">项目4eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</span>
+                <a href="#"><span class="a-span">项目4</span>
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
@@ -527,12 +530,12 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-          用户主页
+          指标编辑
         <!-- <small>Optional description</small> -->
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-        <li class="active">用户主页</li>
+        <li class="active">指标编辑</li>
       </ol>
     </section>
 
@@ -779,7 +782,7 @@ desired effect
               </div>
               <!-- /.row -->
               <div class="box-footer">
-                  <button type="button" class="btn btn-default pull-right"></i>保存修改</button>
+                  <button id="post-edit-btn" type="button" class="btn btn-default pull-right"></i>保存修改</button>
               </div>
               <!-- <div class="overlay"> -->
               <!--     <i class="fa fa&#45;refresh fa&#45;spin"></i> -->
@@ -1016,6 +1019,8 @@ $('#add-item-btn').on('click',function(){
 </script>
 <script type="text/javascript">
 $(function () {
+    //日期选择器的使用:http://eonasdan.github.io/bootstrap-datetimepicker/Functions/#defaultdate
+    //moment.js ：http://momentjs.com/docs/#/manipulating/local/
     var default_time = moment().local().hours(3).minutes(0).seconds(0);
     $('#rule-datetimepicker').datetimepicker({
         locale: 'zh-cn',
@@ -1029,6 +1034,14 @@ $(function () {
         console.log(e); 
         console.log($('#rule-datetimepicker').data('DateTimePicker').date());
     });
+});
+</script>
+<script>
+$('body').on('click','.user-panel',function(){
+    window.location.href = 'homepage.html';
+});
+$('body').on('click','#post-edit-btn',function(){
+    window.location.href = 'project_info.html';
 });
 </script>
 </body>

@@ -60,6 +60,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             vertical-align:middle; 
         }
 
+        .user-panel{
+            cursor:pointer; 
+        }
 </style>
 </head>
 <!--
@@ -332,7 +335,7 @@ desired effect
             <li id="p2" ><a href="starter.html">项目2</a></li>
             <li id="p3" ><a href="starter.html">项目3</a></li>
             <li id="p4" >
-                <a href="#"><span class="a-span">项目4eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</span>
+                <a href="#"><span class="a-span">项目4</span>
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
@@ -725,7 +728,7 @@ $('body').on('click','.treeview, .treeview-menu>li',function(){
         var ul_list = $(this).parents('.treeview-menu, .sidebar-menu');
         console.log(ul_list.length);
         //复制导航栏代码
-        if( ul_list.length == 3){
+        if( ul_list.length == 6){
             $(event.target).closest('li').addClass('active');
             $(event.target).closest('li').find('ul:first').addClass('menu-open');
             $(event.target).closest('li').find('ul:first').css('display','block');
@@ -752,7 +755,7 @@ $('body').on('click','.level-up',function(){
     var first_node_id = $('ul.sidebar-menu').children('li:first').attr('id');
     $('ul.sidebar-menu').html(sidebar);
     var li = $('#'+first_node_id);
-    for (var i=0;i<2;i++){
+    for (var i=0;i<5;i++){
         li.parents('li:first').addClass('active');
         li.parents('li:first').find('ul:first').addClass('menu-open');
         li.parents('li:first').find('ul:first').css('display','block');
@@ -828,6 +831,11 @@ $('#add-item-btn').on('click',function(){
     $('#popup-add-member-modal').on('click',function(){
         $('#add-new-user').modal('show');
     });
+</script>
+<script>
+$('body').on('click','.user-panel',function(){
+    window.location.href = 'homepage.html';
+});
 </script>
 </body>
 </html>

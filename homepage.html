@@ -59,6 +59,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
         #lately-pm-list>.info-box{
             margin-bottom:2px; 
         }
+        .info-box{
+            cursor:pointer; 
+        }
+        .products-list>li{
+            cursor:pointer; 
+        
+        }
+        .todo-list>li{
+            cursor:pointer; 
+        
+        }
+        .user-panel{
+            cursor:pointer; 
+        }
 </style>
 </head>
 <!--
@@ -176,14 +190,14 @@ desired effect
                   <li><!-- start notification -->
                     <a href="#">
                       <i class="fa fa-reply text-aqua"></i>xxx做了xxx 
-                      <button class="btn btn-xs btn-warning pull-right">确认处理</button>
+                      <button class="btn btn-xs btn-warning pull-right handle-message">确认处理</button>
                     </a>
                   </li>
                   <!-- end notification -->
                   <li><!-- start notification -->
                     <a href="#">
                       <i class="fa fa-reply text-aqua"></i>xxx做了xxx 
-                      <button class="btn btn-xs btn-warning pull-right">确认处理</button>
+                      <button class="btn btn-xs btn-warning pull-right handle-message">确认处理</button>
                     </a>
                   </li>
                   <!-- end notification -->
@@ -313,136 +327,674 @@ desired effect
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <!-- <li class="header">HEADER</li> -->
-        <!-- Optionally, you can add icons to the links -->
-        <!-- <li><a href="business_plan.html"><i class="fa fa&#45;link"></i> <span>业务规划</span></a></li> -->
-        <!-- <li class="active"><a href="starter.html"><i class="fa fa&#45;link"></i> <span>经营规划</span></a></li> -->
-        <!-- <li><a href="funds_plan.html"><i class="fa fa&#45;link"></i> <span>资金规划</span></a></li> -->
-        <!-- <li><a href="bet_plan.html"><i class="fa fa&#45;link"></i> <span>对赌规划</span></a></li> -->
-        <!-- <li><a href="funds_safe.html"><i class="fa fa&#45;link"></i> <span>资金安全性</span></a></li> -->
-        <li id="c1" class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span class="a-span">公司1</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li id="p1" ><a href="starter.html">项目1</a></li>
-            <li id="p2" ><a href="starter.html">项目2</a></li>
-            <li id="p3" ><a href="starter.html">项目3</a></li>
-            <li id="p4" >
-                <a href="#"><span class="a-span">项目4eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li id="p4_b1"><a href="funds_plan.html"><i class="fa fa-link"></i> <span class="a-span">资金规划</span></a></li>
-                    <li id="p4_b2"><a href="bet_plan.html"><i class="fa fa-link"></i> <span class="a-span">对赌规划</span></a></li>
-                    <li id="p4_b3"><a href="funds_safe.html"><i class="fa fa-link"></i> <span class="a-span">资金安全性</span></a></li>
-                    <li id="p5"><a href="#"><i class="fa fa-link"></i> <span class="a-span">项目5</span>
-                            <span class="pull-right-container">
-                              <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                            <ul class="treeview-menu">
-                                <li id="p5_b1"><a href="funds_plan.html"><i class="fa fa-link"></i> <span>资金规划</span></a></li>
-                                <li id="p5_b2"><a href="bet_plan.html"><i class="fa fa-link"></i> <span>对赌规划</span></a></li>
-                                <li id="p5_b3"><a href="funds_safe.html"><i class="fa fa-link"></i> <span>资金安全性</span></a></li>
-                                <li id="p6"><a href="#"><i class="fa fa-link"></i> <span class="a-span">项目6</span>
-                                        <span class="pull-right-container">
-                                          <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                        <ul class="treeview-menu">
-                                            <li id="p6_b1"><a href="funds_plan.html"><i class="fa fa-link"></i> <span class="a-span">资金规划</span></a></li>
-                                            <li id="p6_b2"><a href="bet_plan.html"><i class="fa fa-link"></i> <span class="a-span">对赌规划</span></a></li>
-                                            <li id="p6_b3"><a href="funds_safe.html"><i class="fa fa-link"></i> <span class="a-span">资金安全性</span></a></li>
-                                            <li id="p7"><a href="#"><i class="fa fa-link"></i> <span class="a-span">项目7</span>
-                                                <span class="pull-right-container">
-                                                  <i class="fa fa-angle-left pull-right"></i>
-                                                </span>
-                                                <ul class="treeview-menu">
-                                                    <li id="p7_b1"><a href="funds_plan.html"><i class="fa fa-link"></i> <span class="a-span">资金规划</span></a></li>
-                                                    <li id="p7_b2"><a href="bet_plan.html"><i class="fa fa-link"></i> <span class="a-span">对赌规划</span></a></li>
-                                                    <li id="p7_b3"><a href="funds_safe.html"><i class="fa fa-link"></i> <span class="a-span">资金安全性</span></a></li>
-                                                    <li id="p8"><a href="#"><i class="fa fa-link"></i> <span class="a-span">项目8</span>
-                                                        <span class="pull-right-container">
-                                                          <i class="fa fa-angle-left pull-right"></i>
-                                                        </span>
-                                                        <ul class="treeview-menu">
-                                                            <li id="p8_b1"><a href="funds_plan.html"><i class="fa fa-link"></i> <span class="a-span">资金规划</span></a></li>
-                                                            <li id="p8_b2"><a href="bet_plan.html"><i class="fa fa-link"></i> <span class="a-span">对赌规划</span></a></li>
-                                                            <li id="p8_b3"><a href="funds_safe.html"><i class="fa fa-link"></i> <span class="a-span">资金安全性</span></a></li>
-                                                            <li id="p9"><a href="#"><i class="fa fa-link"></i> <span class="a-span">项目9</span>
-                                                                <span class="pull-right-container">
-                                                                  <i class="fa fa-angle-left pull-right"></i>
-                                                                </span>
-                                                                <ul class="treeview-menu">
-                                                                    <li id="p9_b1"><a href="funds_plan.html"><i class="fa fa-link"></i> <span>资金规划</span></a></li>
-                                                                    <li id="p9_b2"><a href="bet_plan.html"><i class="fa fa-link"></i> <span>对赌规划</span></a></li>
-                                                                    <li id="p9_b3"><a href="funds_safe.html"><i class="fa fa-link"></i> <span>资金安全性</span></a></li>
-                                                                    <li id="p10"><a href="#"><i class="fa fa-link"></i> <span class="a-span">项目10</span>
-                                                                        <span class="pull-right-container">
-                                                                          <i class="fa fa-angle-left pull-right"></i>
-                                                                        </span>
-                                                                        <ul class="treeview-menu">
-                                                                            <li id="p10_b1"><a href="funds_plan.html"><i class="fa fa-link"></i> <span class="a-span">资金规划</span></a></li>
-                                                                            <li id="p10_b2"><a href="bet_plan.html"><i class="fa fa-link"></i> <span class="a-span">对赌规划</span></a></li>
-                                                                            <li id="p10_b3"><a href="funds_safe.html"><i class="fa fa-link"></i> <span>资金安全性</span></a></li>
-                                                                            <li id="p11"><a href="#"><i class="fa fa-link"></i> <span class="a-span">项目11</span>
-                                                                                <span class="pull-right-container">
-                                                                                  <i class="fa fa-angle-left pull-right"></i>
-                                                                                </span>
-                                                                                <ul class="treeview-menu">
-                                                                                    <li id="p11_b1"><a href="funds_plan.html"><i class="fa fa-link"></i> <span class="a-span">资金规划</span></a></li>
-                                                                                    <li id="p11_b2"><a href="bet_plan.html"><i class="fa fa-link"></i> <span>对赌规划</span></a></li>
-                                                                                    <li id="p11_b3"><a href="funds_safe.html"><i class="fa fa-link"></i> <span>资金安全性</span></a></li>
-                                                                                </a></li>
-                                                                                </ul>
-                                                                        </ul>
-                                                                        </a>
-                                                                    </li>
-                                                                
-                                                                </ul>
-                                                                </a></li>
-                                                        </ul>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    
-                                    </a>
-                                </li>
-                                <li id="p14"><a href="#"><i class="fa fa-link"></i> <span class="a-span">项目14</span></a></li>
-                            </ul>
-                        </a>
-                    </li>
-                    <li id="p15"><a href="starter.html"><i class="fa fa-link"></i> <span class="a-span">项目15</span></a></li>
-
-                </ul>
-            </li>
-          </ul>
-        </li>
-        <li  id="c2"class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span class="a-span">公司2</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li id="p16"><a href="starter.html">项目16</a></li>
-            <li id="p17"><a href="starter.html"><span class="a-span">项目17</span>
-                    <span class="pull-right-container">
+          <!-- <li class="header">HEADER</li> -->
+          <!-- Optionally, you can add icons to the links -->
+          <!-- <li><a href="business_plan.html"><i class="fa fa&#45;link"></i> <span>业务规划</span></a></li> -->
+          <!-- <li class="active"><a href="starter.html"><i class="fa fa&#45;link"></i> <span>经营规划</span></a></li> -->
+          <!-- <li><a href="funds_plan.html"><i class="fa fa&#45;link"></i> <span>资金规划</span></a></li> -->
+          <!-- <li><a href="bet_plan.html"><i class="fa fa&#45;link"></i> <span>对赌规划</span></a></li> -->
+          <li>
+              <a href="create_user.html">
+                    <i class="fa fa-link"></i>
+                  <span>用户编辑</span>
+              </a>
+          </li>
+          <li id="c1" class="treeview">
+              <a href="#"><i class="fa fa-link"></i> <span class="a-span">公司1</span>
+                  <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                    <ul class="treeview-menu">
-                        <li id="p17_b1"><a href="funds_plan.html"><i class="fa fa-link"></i> <span>资金规划</span></a></li>
-                        <li id="p17_b2"><a href="bet_plan.html"><i class="fa fa-link"></i> <span>对赌规划</span></a></li>
-                        <li id="p17_b3"><a href="funds_safe.html"><i class="fa fa-link"></i> <span>资金安全性</span></a></li>
-                </a></li>
-          </ul>
-        </li>
+                  </span>
+              </a>
+              <ul class="treeview-menu">
+                  <li id="p1" ><a href="starter.html">项目1</a></li>
+                  <li id="p2" ><a href="starter.html">项目2</a></li>
+                  <li id="p3" ><a href="starter.html">项目3</a></li>
+                  <li id="p4" >
+                      <a href="#"><span class="a-span">项目4</span>
+                          <span class="pull-right-container">
+                              <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                      </a>
+                      <ul class="treeview-menu">
+                          <li id="p4_b1">
+                              <a href="#">
+                                  <i class="fa fa-link"></i> 
+                                  <span class="a-span">资金规划</span>
+                                  <span class="pull-right-container">
+                                      <i class="fa fa-angle-left pull-right"></i>
+                                  </span>
+                              </a>
+                              <ul class="treeview-menu">
+                                  <li id="p4_b2_index1">
+                                      <a href="funds_plan.html">
+                                          <i class="fa fa-link"></i> 
+                                          <span class="a-span">指标</span>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li id="p4_b2">
+                              <a href="bet_plan.html">
+                                  <i class="fa fa-link"></i> 
+                                  <span class="a-span">对赌规划</span>
+                              
+                                  <span class="pull-right-container">
+                                      <i class="fa fa-angle-left pull-right"></i>
+                                  </span>
+                              </a>
+                              <ul class="treeview-menu">
+                                  <li id="p4_b2_index1">
+                                      <a href="bet_plan.html">
+                                          <i class="fa fa-link"></i> 
+                                          <span class="a-span">指标</span>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li id="p4_b4">
+                              <a href="#">
+                                  <i class="fa fa-link"></i> 
+                                  <span class="a-span">业务规划</span>
+                              
+                                  <span class="pull-right-container">
+                                      <i class="fa fa-angle-left pull-right"></i>
+                                  </span>
+                              </a>
+                              <ul class="treeview-menu">
+                                  <li id="p4_b4_index1">
+                                      <a href="business_plan.html">
+                                          <i class="fa fa-link"></i> 
+                                          <span class="a-span">指标</span>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li id="p4_b3">
+                              <a href="#">
+                                  <i class="fa fa-link"></i> 
+                                  <span class="a-span">资金安全性</span>
+                             
+                                  <span class="pull-right-container">
+                                      <i class="fa fa-angle-left pull-right"></i>
+                                  </span>
+                              </a>
+                              <ul class="treeview-menu">
+                                  <li id="p4_b3_index1">
+                                      <a href="funds_safe.html">
+                                          <i class="fa fa-link"></i> 
+                                          <span class="a-span">指标</span>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li id="p4_b6">
+                              <a href="#">
+                                  <i class="fa fa-link"></i> 
+                                  <span class="a-span">经营规划</span>
+                             
+                                  <span class="pull-right-container">
+                                      <i class="fa fa-angle-left pull-right"></i>
+                                  </span>
+                              </a>
+                              <ul class="treeview-menu">
+                                  <li id="p4_b6_index1">
+                                      <a href="oprate_plan.html">
+                                          <i class="fa fa-link"></i> 
+                                          <span class="a-span">指标</span>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li id="p5">
+                              <a href="#">
+                                  <i class="fa fa-link"></i> 
+                                  <span class="a-span">项目5</span>
+                                  <span class="pull-right-container">
+                                      <i class="fa fa-angle-left pull-right"></i>
+                                  </span>
+                              </a>
+                              <ul class="treeview-menu">
+                                  <li id="p5_b1">
+                                      <a href="funds_plan.html">
+                                          <i class="fa fa-link"></i> 
+                                          <span>资金规划</span>
+                                          <span class="pull-right-container">
+                                              <i class="fa fa-angle-left pull-right"></i>
+                                          </span>
+                                      </a>
+                                      <ul class="treeview-menu">
+                                          <li id="p4_b2_index1">
+                                              <a href="funds_plan.html">
+                                                  <i class="fa fa-link"></i> 
+                                                  <span class="a-span">指标</span>
+                                              </a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li id="p5_b2">
+                                      <a href="bet_plan.html">
+                                          <i class="fa fa-link"></i> 
+                                          <span>对赌规划</span>
+                                      
+                                          <span class="pull-right-container">
+                                              <i class="fa fa-angle-left pull-right"></i>
+                                          </span>
+                                      </a>
+                                      <ul class="treeview-menu">
+                                          <li id="p4_b2_index1">
+                                              <a href="bet_plan.html">
+                                                  <i class="fa fa-link"></i> 
+                                                  <span class="a-span">指标</span>
+                                              </a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li id="p5_b3">
+                                      <a href="funds_safe.html">
+                                          <i class="fa fa-link"></i> 
+                                          <span>资金安全性</span>
+                                      
+                                          <span class="pull-right-container">
+                                              <i class="fa fa-angle-left pull-right"></i>
+                                          </span>
+                                      </a>
+                                      <ul class="treeview-menu">
+                                          <li id="p4_b6_index1">
+                                              <a href="funds_safe.html">
+                                                  <i class="fa fa-link"></i> 
+                                                  <span class="a-span">指标</span>
+                                              </a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li id="p6">
+                                      <a href="#">
+                                          <i class="fa fa-link"></i> 
+                                          <span class="a-span">项目6</span>
+                                          <span class="pull-right-container">
+                                              <i class="fa fa-angle-left pull-right"></i>
+                                          </span>
+                                      </a>
+                                      <ul class="treeview-menu">
+                                          <li id="p6_b1">
+                                              <a href="funds_plan.html">
+                                                  <i class="fa fa-link"></i> 
+                                                  <span class="a-span">资金规划</span>
+                                                  <span class="pull-right-container">
+                                                      <i class="fa fa-angle-left pull-right"></i>
+                                                  </span>
+                                              </a>
+                                              <ul class="treeview-menu">
+                                                  <li id="p4_b2_index1">
+                                                      <a href="funds_plan.html">
+                                                          <i class="fa fa-link"></i> 
+                                                          <span class="a-span">指标</span>
+                                                      </a>
+                                                  </li>
+                                              </ul>
+                                              
+                                          </li>
+                                          <li id="p6_b2">
+                                              <a href="bet_plan.html">
+                                                  <i class="fa fa-link"></i> 
+                                                  <span class="a-span">对赌规划</span>
+                                              
+                                                  <span class="pull-right-container">
+                                                      <i class="fa fa-angle-left pull-right"></i>
+                                                  </span>
+                                              </a>
+                                              <ul class="treeview-menu">
+                                                  <li id="p4_b2_index1">
+                                                      <a href="bet_plan.html">
+                                                          <i class="fa fa-link"></i> 
+                                                          <span class="a-span">指标</span>
+                                                      </a>
+                                                  </li>
+                                              </ul>
+                                          </li>
+                                          <li id="p6_b3">
+                                              <a href="funds_safe.html">
+                                                  <i class="fa fa-link"></i> 
+                                                  <span class="a-span">资金安全性</span>
+                                              
+                                                  <span class="pull-right-container">
+                                                      <i class="fa fa-angle-left pull-right"></i>
+                                                  </span>
+                                              </a>
+                                              <ul class="treeview-menu">
+                                                  <li id="p4_b6_index1">
+                                                      <a href="funds_safe.html">
+                                                          <i class="fa fa-link"></i> 
+                                                          <span class="a-span">指标</span>
+                                                      </a>
+                                                  </li>
+                                              </ul>
+                                          </li>
+                                          <li id="p7">
+                                              <a href="#">
+                                                  <i class="fa fa-link"></i> 
+                                                  <span class="a-span">项目7</span>
+                                                  <span class="pull-right-container">
+                                                      <i class="fa fa-angle-left pull-right"></i>
+                                                  </span>
+                                              </a>
+                                              <ul class="treeview-menu">
+                                                  <li id="p7_b1">
+                                                      <a href="funds_plan.html">
+                                                          <i class="fa fa-link"></i>
+                                                          <span class="a-span">资金规划</span>
+                                                          <span class="pull-right-container">
+                                                              <i class="fa fa-angle-left pull-right"></i>
+                                                          </span>
+                                                      </a>
+                                                      <ul class="treeview-menu">
+                                                          <li id="p4_b2_index1">
+                                                              <a href="funds_plan.html">
+                                                                  <i class="fa fa-link"></i> 
+                                                                  <span class="a-span">指标</span>
+                                                              </a>
+                                                          </li>
+                                                      </ul>
+                                                      
+                                                  </li>
+                                                  <li id="p7_b2">
+                                                      <a href="bet_plan.html">
+                                                          <i class="fa fa-link"></i> 
+                                                          <span class="a-span">对赌规划</span>
+                                                          <span class="pull-right-container">
+                                                              <i class="fa fa-angle-left pull-right"></i>
+                                                          </span>
+                                                      </a>
+                                                      <ul class="treeview-menu">
+                                                          <li id="p4_b2_index1">
+                                                              <a href="bet_plan.html">
+                                                                  <i class="fa fa-link"></i> 
+                                                                  <span class="a-span">指标</span>
+                                                              </a>
+                                                          </li>
+                                                      </ul>
+                                                      
+                                                  </li>
+                                                  <li id="p7_b3">
+                                                      <a href="funds_safe.html">
+                                                          <i class="fa fa-link"></i>
+                                                          <span class="a-span">资金安全性</span>
+                                                      
+                                                          <span class="pull-right-container">
+                                                              <i class="fa fa-angle-left pull-right"></i>
+                                                          </span>
+                                                      </a>
+                                                      <ul class="treeview-menu">
+                                                          <li id="p4_b6_index1">
+                                                              <a href="funds_safe.html">
+                                                                  <i class="fa fa-link"></i> 
+                                                                  <span class="a-span">指标</span>
+                                                              </a>
+                                                          </li>
+                                                      </ul>
+                                                  </li>
+                                                  <li id="p8">
+                                                      <a href="#">
+                                                          <i class="fa fa-link"></i>
+                                                          <span class="a-span">项目8</span>
+                                                          <span class="pull-right-container">
+                                                              <i class="fa fa-angle-left pull-right"></i>
+                                                          </span>
+                                                      </a>
+                                                      <ul class="treeview-menu">
+                                                          <li id="p8_b1">
+                                                              <a href="funds_plan.html">
+                                                                  <i class="fa fa-link"></i>
+                                                                  <span class="a-span">资金规划</span>
+                                                                  <span class="pull-right-container">
+                                                                      <i class="fa fa-angle-left pull-right"></i>
+                                                                  </span>
+                                                              </a>
+                                                              <ul class="treeview-menu">
+                                                                  <li id="p4_b2_index1">
+                                                                      <a href="funds_plan.html">
+                                                                          <i class="fa fa-link"></i> 
+                                                                          <span class="a-span">指标</span>
+                                                                      </a>
+                                                                  </li>
+                                                              </ul>
+                                                              
+                                                          </li>
+                                                          <li id="p8_b2">
+                                                              <a href="bet_plan.html">
+                                                                  <i class="fa fa-link"></i>
+                                                                  <span class="a-span">对赌规划</span>
+                                                              
+                                                                  <span class="pull-right-container">
+                                                                      <i class="fa fa-angle-left pull-right"></i>
+                                                                  </span>
+                                                              </a>
+                                                              <ul class="treeview-menu">
+                                                                  <li id="p4_b2_index1">
+                                                                      <a href="bet_plan.html">
+                                                                          <i class="fa fa-link"></i> 
+                                                                          <span class="a-span">指标</span>
+                                                                      </a>
+                                                                  </li>
+                                                              </ul>
+                                                          </li>
+                                                          <li id="p8_b3">
+                                                              <a href="funds_safe.html">
+                                                                  <i class="fa fa-link"></i> 
+                                                                  <span class="a-span">资金安全性</span>
+                                                              
+                                                                  <span class="pull-right-container">
+                                                                      <i class="fa fa-angle-left pull-right"></i>
+                                                                  </span>
+                                                              </a>
+                                                              <ul class="treeview-menu">
+                                                                  <li id="p4_b6_index1">
+                                                                      <a href="funds_safe.html">
+                                                                          <i class="fa fa-link"></i> 
+                                                                          <span class="a-span">指标</span>
+                                                                      </a>
+                                                                  </li>
+                                                              </ul>
+                                                          </li>
+                                                          <li id="p9">
+                                                              <a href="#">
+                                                                  <i class="fa fa-link"></i>
+                                                                  <span class="a-span">项目9</span>
+                                                                  <span class="pull-right-container">
+                                                                      <i class="fa fa-angle-left pull-right"></i>
+                                                                  </span>
+                                                              </a>
+                                                              <ul class="treeview-menu">
+                                                                  <li id="p9_b1">
+                                                                      <a href="funds_plan.html">
+                                                                          <i class="fa fa-link"></i>
+                                                                          <span>资金规划</span>
+                                                                          <span class="pull-right-container">
+                                                                              <i class="fa fa-angle-left pull-right"></i>
+                                                                          </span>
+                                                                      </a>
+                                                                      <ul class="treeview-menu">
+                                                                          <li id="p4_b2_index1">
+                                                                              <a href="funds_plan.html">
+                                                                                  <i class="fa fa-link"></i> 
+                                                                                  <span class="a-span">指标</span>
+                                                                              </a>
+                                                                          </li>
+                                                                      </ul>
+                                                                  </li>
+                                                                  <li id="p9_b2">
+                                                                      <a href="bet_plan.html">
+                                                                          <i class="fa fa-link"></i>
+                                                                          <span>对赌规划</span>
+                                                                      
+                                                                          <span class="pull-right-container">
+                                                                              <i class="fa fa-angle-left pull-right"></i>
+                                                                          </span>
+                                                                      </a>
+                                                                      <ul class="treeview-menu">
+                                                                          <li id="p4_b2_index1">
+                                                                              <a href="bet_plan.html">
+                                                                                  <i class="fa fa-link"></i> 
+                                                                                  <span class="a-span">指标</span>
+                                                                              </a>
+                                                                          </li>
+                                                                      </ul>
+                                                                  </li>
+                                                                  <li id="p9_b3">
+                                                                      <a href="funds_safe.html">
+                                                                          <i class="fa fa-link"></i> 
+                                                                          <span>资金安全性</span>
+                                                                      
+                                                                          <span class="pull-right-container">
+                                                                              <i class="fa fa-angle-left pull-right"></i>
+                                                                          </span>
+                                                                      </a>
+                                                                      <ul class="treeview-menu">
+                                                                          <li id="p4_b6_index1">
+                                                                              <a href="funds_safe.html">
+                                                                                  <i class="fa fa-link"></i> 
+                                                                                  <span class="a-span">指标</span>
+                                                                              </a>
+                                                                          </li>
+                                                                      </ul>
+                                                                  </li>
+                                                                  <li id="p10">
+                                                                      <a href="#">
+                                                                          <i class="fa fa-link"></i>
+                                                                          <span class="a-span">项目10</span>
+                                                                          <span class="pull-right-container">
+                                                                              <i class="fa fa-angle-left pull-right"></i>
+                                                                          </span>
+                                                                      </a>
+                                                                      <ul class="treeview-menu">
+                                                                          <li id="p10_b1">
+                                                                              <a href="funds_plan.html">
+                                                                                  <i class="fa fa-link"></i> 
+                                                                                  <span class="a-span">资金规划</span>
+                                                                                  <span class="pull-right-container">
+                                                                                      <i class="fa fa-angle-left pull-right"></i>
+                                                                                  </span>
+                                                                              </a>
+                                                                              <ul class="treeview-menu">
+                                                                                  <li id="p4_b2_index1">
+                                                                                      <a href="funds_plan.html">
+                                                                                          <i class="fa fa-link"></i> 
+                                                                                          <span class="a-span">指标</span>
+                                                                                      </a>
+                                                                                  </li>
+                                                                              </ul>
+                                                                              
+                                                                          </li>
+                                                                          <li id="p10_b2">
+                                                                              <a href="bet_plan.html">
+                                                                                  <i class="fa fa-link"></i>
+                                                                                  <span class="a-span">对赌规划</span>
+                                                                             
+                                                                                  <span class="pull-right-container">
+                                                                                      <i class="fa fa-angle-left pull-right"></i>
+                                                                                  </span>
+                                                                              </a>
+                                                                              <ul class="treeview-menu">
+                                                                                  <li id="p4_b2_index1">
+                                                                                      <a href="bet_plan.html">
+                                                                                          <i class="fa fa-link"></i> 
+                                                                                          <span class="a-span">指标</span>
+                                                                                      </a>
+                                                                                  </li>
+                                                                              </ul>
+                                                                          </li>
+                                                                          <li id="p10_b3">
+                                                                              <a href="funds_safe.html">
+                                                                                  <i class="fa fa-link"></i>
+                                                                                  <span>资金安全性</span>
+                                                                              
+                                                                                  <span class="pull-right-container">
+                                                                                      <i class="fa fa-angle-left pull-right"></i>
+                                                                                  </span>
+                                                                              </a>
+                                                                              <ul class="treeview-menu">
+                                                                                  <li id="p4_b6_index1">
+                                                                                      <a href="funds_safe.html">
+                                                                                          <i class="fa fa-link"></i> 
+                                                                                          <span class="a-span">指标</span>
+                                                                                      </a>
+                                                                                  </li>
+                                                                              </ul>
+                                                                          </li>
+                                                                          <li id="p11">
+                                                                              <a href="#">
+                                                                                  <i class="fa fa-link"></i> 
+                                                                                  <span class="a-span">项目11</span>
+                                                                                  <span class="pull-right-container">
+                                                                                      <i class="fa fa-angle-left pull-right"></i>
+                                                                                  </span>
+                                                                              </a>
+                                                                              <ul class="treeview-menu">
+                                                                                  <li id="p11_b1">
+                                                                                      <a href="funds_plan.html">
+                                                                                          <i class="fa fa-link"></i>
+                                                                                          <span class="a-span">资金规划</span>
+                                                                                      
+                                                                                          <span class="pull-right-container">
+                                                                                              <i class="fa fa-angle-left pull-right"></i>
+                                                                                          </span>
+                                                                                      </a>
+                                                                                      <ul class="treeview-menu">
+                                                                                          <li id="p4_b2_index1">
+                                                                                              <a href="funds_plan.html">
+                                                                                                  <i class="fa fa-link"></i> 
+                                                                                                  <span class="a-span">指标</span>
+                                                                                              </a>
+                                                                                          </li>
+                                                                                      </ul>
+                                                                                  </li>
+                                                                                  <li id="p11_b2">
+                                                                                      <a href="bet_plan.html">
+                                                                                          <i class="fa fa-link"></i>
+                                                                                          <span>对赌规划</span>
+                                                                                      
+                                                                                          <span class="pull-right-container">
+                                                                                              <i class="fa fa-angle-left pull-right"></i>
+                                                                                          </span>
+                                                                                      </a>
+                                                                                      <ul class="treeview-menu">
+                                                                                          <li id="p4_b2_index1">
+                                                                                              <a href="bet_plan.html">
+                                                                                                  <i class="fa fa-link"></i> 
+                                                                                                  <span class="a-span">指标</span>
+                                                                                              </a>
+                                                                                          </li>
+                                                                                      </ul>
+                                                                                  </li>
+                                                                                  <li id="p11_b3">
+                                                                                      <a href="funds_safe.html">
+                                                                                          <i class="fa fa-link"></i>
+                                                                                          <span>资金安全性</span>
+                                                                                      
+                                                                                          <span class="pull-right-container">
+                                                                                              <i class="fa fa-angle-left pull-right"></i>
+                                                                                          </span>
+                                                                                      </a>
+                                                                                      <ul class="treeview-menu">
+                                                                                          <li id="p4_b6_index1">
+                                                                                              <a href="funds_safe.html">
+                                                                                                  <i class="fa fa-link"></i> 
+                                                                                                  <span class="a-span">指标</span>
+                                                                                              </a>
+                                                                                          </li>
+                                                                                      </ul>
+                                                                                  </li>
+                                                                          </li>
+                                                                              </ul>
+                                                                      </ul>
+
+                                                                  </li>
+
+                                                              </ul>
+                                                          </li>
+                                                      </ul>
+                                                  </li>
+                                              </ul>
+                                          </li>
+                                      </ul>
+
+                                  </li>
+                                  <li id="p14">
+                                      <a href="#">
+                                          <i class="fa fa-link"></i>
+                                          <span class="a-span">项目14</span>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li id="p15">
+                              <a href="starter.html">
+                                  <i class="fa fa-link"></i>
+                                  <span class="a-span">项目15</span>
+                              </a>
+                          </li>
+
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <li  id="c2"class="treeview">
+              <a href="#">
+                  <i class="fa fa-link"></i>
+                  <span class="a-span">公司2</span>
+                  <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+              </a>
+              <ul class="treeview-menu">
+                  <li id="p16">
+                      <a href="starter.html">项目16</a>
+                  </li>
+                  <li id="p17">
+                      <a href="starter.html">
+                          <span class="a-span">项目17</span>
+                          <span class="pull-right-container">
+                              <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                      </a>
+                      <ul class="treeview-menu">
+                          <li id="p17_b1">
+                              <a href="funds_plan.html">
+                                  <i class="fa fa-link"></i>
+                                  <span>资金规划</span>
+                              
+                                  <span class="pull-right-container">
+                                      <i class="fa fa-angle-left pull-right"></i>
+                                  </span>
+                              </a>
+                              <ul class="treeview-menu">
+                                  <li id="p4_b2_index1">
+                                      <a href="funds_plan.html">
+                                          <i class="fa fa-link"></i> 
+                                          <span class="a-span">指标</span>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li id="p17_b2">
+                              <a href="bet_plan.html">
+                                  <i class="fa fa-link"></i>
+                                  <span>对赌规划</span>
+                              
+                                  <span class="pull-right-container">
+                                      <i class="fa fa-angle-left pull-right"></i>
+                                  </span>
+                              </a>
+                              <ul class="treeview-menu">
+                                  <li id="p4_b2_index1">
+                                      <a href="bet_plan.html">
+                                          <i class="fa fa-link"></i> 
+                                          <span class="a-span">指标</span>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li id="p17_b3">
+                              <a href="funds_safe.html">
+                                  <i class="fa fa-link"></i> 
+                                  <span>资金安全性</span>
+                              
+                                  <span class="pull-right-container">
+                                      <i class="fa fa-angle-left pull-right"></i>
+                                  </span>
+                              </a>
+                              <ul class="treeview-menu">
+                                  <li id="p4_b6_index1">
+                                      <a href="funds_safe.html">
+                                          <i class="fa fa-link"></i> 
+                                          <span class="a-span">指标</span>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </li>
+                  </li>
+              </ul>
+          </li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -526,7 +1078,7 @@ desired effect
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer clearfix no-border">
-                    <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i>添加项目</button>
+                    <!-- <button type="button" class="btn btn&#45;default pull&#45;right"><i class="fa fa&#45;plus"></i>添加项目</button> -->
                 </div>
 
             </div>
@@ -732,7 +1284,7 @@ desired effect
                   <p class="message">
                     <a href="#" class="name">
                       <!-- <small class="text&#45;muted pull&#45;right"><i class="fa fa&#45;clock&#45;o"></i> 2:15</small> -->
-                      <button class="btn-xs btn-danger pull-right" style="border:0px;">审核</button>
+                      <button class="btn-xs btn-danger pull-right my-audit-btn" style="border:0px;">审核</button>
                       小明
                     </a>
                     修改xxx，做了xxx，请您审核。
@@ -745,7 +1297,7 @@ desired effect
 
                   <p class="message">
                     <a href="#" class="name">
-                      <button class="btn-xs btn-danger pull-right" style="border:0px;">审核</button>
+                      <button class="btn-xs btn-danger pull-right my-audit-btn" style="border:0px;">审核</button>
                       小红
                     </a>
                     修改xxx，做了xxx，请您审核。
@@ -758,7 +1310,7 @@ desired effect
 
                   <p class="message">
                     <a href="#" class="name">
-                      <button class="btn-xs btn-danger pull-right" style="border:0px;">审核</button>
+                      <button class="btn-xs btn-danger pull-right my-audit-btn" style="border:0px;">审核</button>
                       乔峰
                     </a>
                     修改xxx，做了xxx，请您审核。
@@ -961,7 +1513,7 @@ desired effect
                   <li class="item attachment-block ">
                       <img class="attachment-img" src="dist/img/photo1.png" alt="Attachment Image">
                       <div class="attachment-pushed">
-                          <h4 class="attachment-heading"><a href="http://www.lipsum.com/">公司1</a></h4>
+                          <h4 class="attachment-heading"><a href="company_info.html">公司1</a></h4>
 
                           <div class="attachment-text">
                               公司介绍介绍介绍介绍介绍介绍.
@@ -974,7 +1526,7 @@ desired effect
                   <li class="item attachment-block ">
                       <img class="attachment-img" src="dist/img/photo1.png" alt="Attachment Image">
                       <div class="attachment-pushed">
-                          <h4 class="attachment-heading"><a href="http://www.lipsum.com/">公司2</a></h4>
+                          <h4 class="attachment-heading"><a href="company_info.html">公司2</a></h4>
 
                           <div class="attachment-text">
                               公司介绍介绍介绍介绍介绍介绍.
@@ -987,7 +1539,7 @@ desired effect
                   <li class="item attachment-block ">
                       <img class="attachment-img" src="dist/img/photo1.png" alt="Attachment Image">
                       <div class="attachment-pushed">
-                          <h4 class="attachment-heading"><a href="http://www.lipsum.com/">公司3</a></h4>
+                          <h4 class="attachment-heading"><a href="company_info.html">公司3</a></h4>
 
                           <div class="attachment-text">
                               公司介绍介绍介绍介绍介绍介绍.
@@ -1000,7 +1552,7 @@ desired effect
                   <li class="item attachment-block ">
                       <img class="attachment-img" src="dist/img/photo1.png" alt="Attachment Image">
                       <div class="attachment-pushed">
-                          <h4 class="attachment-heading"><a href="http://www.lipsum.com/">公司4</a></h4>
+                          <h4 class="attachment-heading"><a href="company_info.html">公司4</a></h4>
 
                           <div class="attachment-text">
                               公司介绍介绍介绍介绍介绍介绍.
@@ -1013,7 +1565,7 @@ desired effect
                   <li class="item attachment-block ">
                       <img class="attachment-img" src="dist/img/photo1.png" alt="Attachment Image">
                       <div class="attachment-pushed">
-                          <h4 class="attachment-heading"><a href="http://www.lipsum.com/">公司5</a></h4>
+                          <h4 class="attachment-heading"><a href="company_info.html">公司5</a></h4>
 
                           <div class="attachment-text">
                               公司介绍介绍介绍介绍介绍介绍.
@@ -1027,7 +1579,7 @@ desired effect
               </div>
               <!-- /.box-body -->
               <div class="box-footer clearfix no-border">
-                  <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i>添加公司</button>
+                  <button id="add-company-btn" type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i>添加公司</button>
               </div>
               <!-- /.box-footer -->
             </div>
@@ -1136,6 +1688,59 @@ desired effect
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<div id="audit-modal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">提交审核意见</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <!-- <label for="audit&#45;opinion" class="control&#45;label">所属公司</label> -->
+
+                    <textarea type="text" class="form-control" id="audit-opinion" placeholder="审核意见"></textarea>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">不通过</button>
+                <button type="button" class="btn btn-success pull-right" data-dismiss="modal">通过</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<div id="read-message-modal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">备注消息</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <!-- <label for="audit&#45;opinion" class="control&#45;label">所属公司</label> -->
+
+                    <textarea type="text" class="form-control" id="audit-opinion" placeholder="备注"></textarea>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success pull-right" data-dismiss="modal">完成</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 
 <!-- REQUIRED JS SCRIPTS -->
 
@@ -1164,7 +1769,7 @@ $('body').on('click','.treeview, .treeview-menu>li',function(){
         var ul_list = $(this).parents('.treeview-menu, .sidebar-menu');
         console.log(ul_list.length);
         //复制导航栏代码
-        if( ul_list.length == 3){
+        if( ul_list.length == 6){
             $(event.target).closest('li').addClass('active');
             $(event.target).closest('li').find('ul:first').addClass('menu-open');
             $(event.target).closest('li').find('ul:first').css('display','block');
@@ -1191,7 +1796,7 @@ $('body').on('click','.level-up',function(){
     var first_node_id = $('ul.sidebar-menu').children('li:first').attr('id');
     $('ul.sidebar-menu').html(sidebar);
     var li = $('#'+first_node_id);
-    for (var i=0;i<2;i++){
+    for (var i=0;i<5;i++){
         li.parents('li:first').addClass('active');
         li.parents('li:first').find('ul:first').addClass('menu-open');
         li.parents('li:first').find('ul:first').css('display','block');
@@ -1214,6 +1819,29 @@ $('body').on('click','.level-up',function(){
     }
 
 
+});
+</script>
+<script>
+$('body').on('click','.info-box',function(){
+    window.location.href = 'project_info.html';
+});
+// $('body').on('click','.products-list>li',function(){
+//     window.location.href = 'company_info.html';
+// });
+$('body').on('click','.todo-list>li',function(){
+    window.location.href = 'bet_plan.html';
+});
+$('body').on('click','#add-company-btn',function(){
+    window.location.href = 'create_company.html';
+});
+$('body').on('click','.user-panel',function(){
+    window.location.href = 'homepage.html';
+});
+$('body').on('click','.my-audit-btn',function(){
+    $('#audit-modal').modal('show');
+});
+$('body').on('click','.handle-message',function(){
+    $('#read-message-modal').modal('show');
 });
 </script>
 </body>
